@@ -52,7 +52,7 @@ function pointsInCircle(circle, meters_user_set) {
 };
 
 
-async function loadSnaps() {
+function loadSnaps() {
     //fetch('http://localhost:3001/snaps')
     //fetch('https://raw.githubusercontent.com/Orsucciu/PWA_IFF/master/db.json')
     fetch('https://pwa-iff-70a4f.firebaseio.com/snaps.json')
