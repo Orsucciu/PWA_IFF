@@ -55,7 +55,7 @@ self.addEventListener('fetch', (evt) => {
 // 8.1 Intercepter une notification push
 self.addEventListener("push", evt => {
     console.log("push event", evt);
-    console.log("data enviata da a nutificaziona :", evt.data.text());
+    //console.log("data enviata da a nutificaziona :", evt.data.text());
 
     self.clients.matchAll().then(all => all.map(client => client.postMessage(evt.data.text() ))); //sends a message to the client (main js)
 

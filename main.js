@@ -7,7 +7,7 @@ var map = L.map( 'map', {
     zoom: 2
 });
 
-L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer( 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     subdomains: ['a','b','c']
 }).addTo( map );
@@ -55,7 +55,7 @@ if(navigator.serviceWorker) {
 
 navigator.serviceWorker.addEventListener('message', function handler (event) { //gets a message from the sw !
     loadSnaps();
-  });
+});
 
 if(window.Notification && window.Notification !== "denied"){
 

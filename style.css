@@ -1,3 +1,11 @@
 body {
     background-color: #d3c7dc;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#map {
+
+
 }

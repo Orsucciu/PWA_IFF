@@ -29,11 +29,13 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
       </head>    
-      <body id="page-top">
-         <div>A U Celentu, Brusgia U Celu Mel'Aranciu.</div>
+      <body id="page-top" style="height: 100vh; width: 100vw;">
+        <div>A U Celentu, Brusgia U Celu Mel'Aranciu. <input type="button" id="centerGeo" value="Truvassi" onclick="setUserMap();" class="btnStyle span3" /></div>
 
-        <div id="map" style="height: 100%; border: 1px solid #AAA;"></div>
- 
+        <div>
+          <div id="map" style="height: 100%; border: 1px solid #AAA;"></div>
+        </div>
+
         <script type='text/javascript' src="functions.js"></script>
         <script type='text/javascript' src="main.js"></script>
 
