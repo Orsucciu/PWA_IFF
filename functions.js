@@ -19,13 +19,13 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 
-function loadSnaps() {
+async function loadSnaps() {
     fetch('http://localhost:3001/snaps')
         .then(response => {
             response.json()
                 .then(snaps => {
                     const allSnaps = snaps.map(t => L.marker( [t.lat, t.lng] )
-                    .bindPopup( `<div><p>Snap aghjunghjatu u ${new Date(t.date) }</p></div><video style="object-fit: fill;" controls><source src="/resources/${t.resource}" type="video/mp4">Your browser does not support the video tag.</video>` )
+                    .bindPopup( `<div><p>Snap aghjunghjatu u ${new Date(t.date) }</p></div><video style="width: 100%;" controls><source src="/resources/${t.resource}" type="video/mp4">Your browser does not support the video tag.</video>` )
                     .addTo( map ));
             
                     console.log(allSnaps); 
@@ -33,6 +33,25 @@ function loadSnaps() {
                 });
         })
         .catch(console.error);
+    /*const response = await fetch('http://localhost:3001/snaps');
+    const myJson = await response.json();
+
+    var videoTag = `<div><p>Snap aghjunghjatu u ${new Date(t.date) }</p></div><video style="object-fit: fill;" controls><source src="/resources/${t.resource}" type="video/mp4">Your browser does not support the video tag.</video>`;
+    var imageTag = `<div><p>Snap aghjunghjatu u ${new Date(t.date) }</p></div><img style="object-fit: fill;" src="/resources/${t.resource}" alt="snap_fetch_error">`;
+    var finalTag = "";
+
+    for(const t in myJson){
+
+        if(t.resource[len(t.resource)] == "4"){
+            finalTag = videoTag; //lazy video detection. Only works for mp4 lol
+        }else{
+            finalTag = imageTag;
+        }
+
+        L.marker( [t.lat, t.lng] )
+        .bindPopup(finalTag)
+        .addTo( map );
+    }*/
 }
 
 function setUserMap() {
