@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Orsucciu/PWA_IFF/issues"
   },
-  "homepage": "https://github.com/Orsucciu/PWA_IFF#readme"
+  "homepage": "https://github.com/Orsucciu/PWA_IFF#readme",
+  "dependencies": {
+    "web-push": "^3.4.2"
+  }
 }

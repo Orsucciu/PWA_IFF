@@ -11,7 +11,7 @@ webPush.setVapidDetails('mailto:theo181297@gmail.com', pushServerKeys.publicKey,
 
 // Pour sendNotification API reference sendNotification(pushSubscription, payload, options)
 // voir https://github.com/web-push-libs/web-push#sendnotificationpushsubscription-payload-options
-webPush.sendNotification(pushClientSubscription, 'Notification envoyée depuis le serveur push node :)')
+webPush.sendNotification(pushClientSubscription, 'Un snap hè statu aghjunghjatu ')
 .then(
     function(result){
         console.log("sendNotification SUCCESS", result);

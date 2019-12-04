@@ -41,12 +41,12 @@ self.addEventListener('fetch', (evt) => {
 
     evt.respondWith(
         fetch(evt.request).then(res => {
-            console.log("url presa da a rede", evt.request.url);
+            //console.log("url presa da a rede", evt.request.url);
             caches.open(cacheName).then(cache => cache.put(evt.request, res));
             return res.clone();
         })
         .catch(err => {
-            console.log("url presa da u cache", evt.request.url);
+            //console.log("url presa da u cache", evt.request.url);
             return caches.match(evt.request);
         })
     );
@@ -56,6 +56,8 @@ self.addEventListener('fetch', (evt) => {
 self.addEventListener("push", evt => {
     console.log("push event", evt);
     console.log("data enviata da a nutificaziona :", evt.data.text());
+
+    self.clients.matchAll().then(all => all.map(client => client.postMessage(evt.data.text() ))); //sends a message to the client (main js)
 
     // 8.1 afficher son contenu dans une notification
     const title = evt.data.text();
