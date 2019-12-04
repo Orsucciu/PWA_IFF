@@ -1,0 +1,22 @@
+{
+  "name": "PWA_IFF",
+  "version": "1.0.0",
+  "description": "A repo for the Instantaneous Fiesta Finder project",
+  "main": "main.js",
+  "scripts": {
+    "jsonserver": "json-server -p 3001 --watch db.json",
+    "start": "live-server --port=3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orsucciu/PWA_IFF.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Orsucciu/PWA_IFF/issues"
+  },
+  "homepage": "https://github.com/Orsucciu/PWA_IFF#readme"
+}

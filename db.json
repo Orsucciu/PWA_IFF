@@ -1,8 +1,22 @@
 {
-    "technos": [
-        {"id": 1, "name": "Angular", "description": "le framework front-end", "url": "https://angular.io/"},
-        {"id": 2, "name": "Node", "description": "JavaScript côté backe-end", "url": "https://nodejs.org/en/"},
-        {"id": 3, "name": "MongoDB", "description": "la célèbre base noSQL", "url": "https://www.mongodb.com/"},
-        {"id": 4, "name": "PWA", "description": "rendre vos applications ++", "url": "https://developer.mozilla.org/en-US/Apps/Progressive"}
-    ]
+"snaps": [
+    {
+      "lat": 42.3057502,
+      "lng": 9.1515258,
+      "date": 1575406699080,
+      "resource": "123.jpeg"
+    },
+    {
+      "lat": 42.3049867,
+      "lng": 9.1513044,
+      "date": 1575406699980,
+      "resource": "156.mp4"
+    },
+    {
+      "lat": 42.3070204,
+      "lng": 9.1502661,
+      "date": 1575406699000,
+      "resource": "24.mp4"
+    }
+  ]
 }
