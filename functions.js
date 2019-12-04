@@ -19,38 +19,6 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 var theMarker = {}; //this holds the user's marker
-var theSnaps = []; //this will hols the snaps fetched, for treatment purposes
-var circle;
-
-function pointsInCircle(circle, meters_user_set) {
-	if (circle !== undefined) {
-    // Only run if we have an address entered
-    // Lat, long of circle
-    circle_lat_long = circle.getLatLng();
-
-    var counter_points_in_circle = 0;
-
-		// Loop through each point in JSON file
-		farmacias.eachLayer(function(layer) {
-			// Lat, long of current point
-			layer_lat_long = layer.getLatLng();
-
-			// Distance from our circle marker
-			// To current point in meters
-			distance_from_layer_circle = layer_lat_long.distanceTo(circle_lat_long);
-
-			// See if meters is within raduis
-			// The user has selected
-			if (distance_from_layer_circle <= meters_user_set) {
-				counter_points_in_circle += 1;
-
-				console.log("found");
-			}
-		});
-	}
-// Close pointsInCircle
-};
-
 
 function loadSnaps() {
     //fetch('http://localhost:3001/snaps')
@@ -60,9 +28,9 @@ function loadSnaps() {
             response.json()
                 .then(snaps => {
                     
-                    theSnaps.push(snaps.map(t => L.marker( [t.lat, t.lng] )
+                    snaps.map(t => L.marker( [t.lat, t.lng] )
                     .bindPopup( `<div><p>Snap aghjunghjatu u ${new Date(t.date) }</p></div><video style="width: 100%;" controls><source src="/resources/${t.resource}" type="video/mp4">Your browser does not support the video tag.</video>` )
-                    .addTo( map )));
+                    .addTo( map ));
 
                     //console.log(theSnaps);
 
