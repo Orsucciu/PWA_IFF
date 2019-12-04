@@ -53,7 +53,8 @@ function pointsInCircle(circle, meters_user_set) {
 
 
 async function loadSnaps() {
-    fetch('http://localhost:3001/snaps')
+    //fetch('http://localhost:3001/snaps')
+    fetch('https://raw.githubusercontent.com/Orsucciu/PWA_IFF/master/db.json')
         .then(response => {
             response.json()
                 .then(snaps => {
