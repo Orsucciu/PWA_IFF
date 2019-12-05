@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Orsucciu/PWA_IFF#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "web-push": "^3.4.2"
   }
 }
