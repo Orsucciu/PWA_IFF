@@ -11,9 +11,9 @@ addTechnoForm.addEventListener('submit', evt => {
         // 9.1 Infrastructure
         id: Date.now(),
         lat: latF.value,
-        long: longF.value,
+        lng: longF.value,
         date: dateF.value,
-        videoname: videonameF.value,
+        resource: videonameF.value,
         unsynced: true
     }
 
