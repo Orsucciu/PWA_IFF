@@ -47,7 +47,7 @@ function loadSnaps() {
                         console.log(value);
 
                         L.marker( [value.lat, value.lng] )
-                        .bindPopup( `<div><p>Snap aghjunghjatu u ${new Date(value.date) }</p></div><video style="width: 100%;" controls><source src="resources/${value.resource}" type="video/mp4">Your browser does not support the video tag.</video>` )
+                        .bindPopup( `<div><p>Snap aghjunghjatu u ${new Date(value.date) }</p></div><video style="width: 100%;" controls><source src="/PWA_IFF/resources/${value.resource}" type="video/mp4">Your browser does not support the video tag.</video>` )
                         .addTo( map )
 
                     });
