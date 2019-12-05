@@ -1,10 +1,8 @@
-	
-console.log("ciao da u service worker");
 
 const cacheName = 'IFF' + '1.0';
  
 self.addEventListener('install', (evt) => {
-    console.log(`sw stallatu a ${new Date().toLocaleTimeString()}`);
+    //console.log(`sw stallatu a ${new Date().toLocaleTimeString()}`);
  
     const cachePromise = caches.open(cacheName).then(cache => {
         return cache.addAll([
@@ -13,7 +11,7 @@ self.addEventListener('install', (evt) => {
             'style.css',
             'vendors/bootstrap4.min.css',
         ])
-        .then(console.log('cache impiantatu'))
+        //.then(console.log('cache impiantatu'))
         .catch(console.err);
     });
  
@@ -22,9 +20,8 @@ self.addEventListener('install', (evt) => {
 });
  
 self.addEventListener('activate', (evt) => {
-    console.log(`sw attivatu a ${new Date().toLocaleTimeString()}`); 
+    //console.log(`sw attivatu a ${new Date().toLocaleTimeString()}`); 
   
-    // 5.4 Supprimer les anciennes instances de cache
     let cacheCleanPromise = caches.keys().then(keys => {
         keys.forEach(key => {            
             if(key !== cacheName){
