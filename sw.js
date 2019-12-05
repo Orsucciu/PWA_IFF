@@ -6,6 +6,8 @@ self.addEventListener('install', (evt) => {
  
     const cachePromise = caches.open(cacheName).then(cache => {
         return cache.addAll([
+            'idb/idb.js',
+            'idb/database.js',
             'index.html',
             'main.js',
             'style.css',
@@ -36,6 +38,11 @@ self.addEventListener('activate', (evt) => {
 //..
 self.addEventListener('fetch', (evt) => {
 
+    if(evt.request.method === 'POST'){
+
+        return;
+    }
+
     evt.respondWith(
         fetch(evt.request).then(res => {
             //console.log("url presa da a rede", evt.request.url);
@@ -64,3 +71,4 @@ self.addEventListener("push", evt => {
     };
     self.registration.showNotification(title, objNotification);
 })
+
