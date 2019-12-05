@@ -25,12 +25,29 @@ function loadSnaps() {
     //fetch('https://raw.githubusercontent.com/Orsucciu/PWA_IFF/master/db.json')
     fetch('https://pwa-iff-70a4f.firebaseio.com/snaps.json')
         .then(response => {
+            console.log("resp", response);
             response.json()
                 .then(snaps => {
+                    console.log(snaps);
                     
-                    snaps.map(t => L.marker( [t.lat, t.lng] )
+                    // for(var a in snaps){
+
+                    //     console.log(a);
+                        
+                    // }
+
+                    Object.values(snaps).forEach(value=>{
+                        console.log(value);
+
+                        L.marker( [value.lat, value.lng] )
+                        .bindPopup( `<div><p>Snap aghjunghjatu u ${new Date(value.date) }</p></div><video style="width: 100%;" controls><source src="/resources/${value.resource}" type="video/mp4">Your browser does not support the video tag.</video>` )
+                        .addTo( map )
+
+                    });
+
+                    /*const allSnaps = snaps.map(t => L.marker( [t.lat, t.lng] )
                     .bindPopup( `<div><p>Snap aghjunghjatu u ${new Date(t.date) }</p></div><video style="width: 100%;" controls><source src="/resources/${t.resource}" type="video/mp4">Your browser does not support the video tag.</video>` )
-                    .addTo( map ));
+                    .addTo( map ) );*/
 
                 });
         })
