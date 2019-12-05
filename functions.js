@@ -19,6 +19,13 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 var theMarker = {}; //this holds the user's marker
+var themarkerIcon = L.icon({
+    iconUrl: 'images/icons/position.png',
+
+    iconSize:     [32, 32], // size of the icon
+    iconAnchor:   [16, 32], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
 function loadSnaps() {
     //fetch('http://localhost:3001/snaps')
@@ -76,7 +83,7 @@ function setUserMap() {
 
     map.flyTo(new L.LatLng(location.latitude, location.longitude), 18);
 
-    theMarker = L.marker( [location.latitude, location.longitude] ).addTo( map );//we set it again
+    theMarker = L.marker( [location.latitude, location.longitude], {icon: themarkerIcon} ).addTo( map );//we set it again
 
     console.log(location)
 }//request for location
